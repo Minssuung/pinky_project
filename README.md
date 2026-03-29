@@ -20,12 +20,12 @@ ShopPinkki
 **요구 사항:** Ubuntu 24.04, ROS 2 Jazzy, Python 3.12+, `ultralytics`, `mediapipe`
 
 아키텍처 통합을 위해 PC와 라즈베리파이가 동일한 네트워크 도메인 위에 구성되어야 합니다.
-```bash
+```zsh
 export ROS_DOMAIN_ID=14
 ```
 
 양측(PC, 로봇)의 워크스페이스에 저장소를 동기화합니다.
-```bash
+```zsh
 cd ~/ros_ws/src
 git clone https://github.com/Minssuung/shoppinkki.git
 cd ~/ros_ws
@@ -34,7 +34,7 @@ cd ~/ros_ws
 ## 4. 구동 방식 (Usage)
 
 ### 4.1 서버 노드 실행 (PC)
-```bash
+```zsh
 colcon build --packages-select pinky_offload_vision
 source install/local_setup.zsh
 
@@ -42,7 +42,7 @@ ros2 launch pinky_offload_vision offload.launch.py
 ```
 
 ### 4.2 엣지 노드 실행 (Raspberry Pi)
-```bash
+```zsh
 colcon build --packages-select pinky_vision_streamer
 source install/local_setup.zsh
 
